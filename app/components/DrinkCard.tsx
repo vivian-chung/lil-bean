@@ -13,7 +13,7 @@ export function DrinkCard({ drink, onPick }: Props) {
       <div className="flex h-28 w-full items-center justify-center text-forest">
         <DrinkArt drinkId={drink.id} className="h-28 w-28 object-contain" />
       </div>
-      <div>
+      <div className="flex-1">
         <h3 className="font-display text-lg font-medium leading-tight text-forestDark">
           {drink.name}
         </h3>
@@ -31,12 +31,12 @@ export function DrinkCard({ drink, onPick }: Props) {
           ))}
           {drink.hasMilk && (
             <span className="rounded-full border border-forest/20 px-2 py-0.5 text-xs uppercase tracking-wide text-forest/70">
-              oat / cow
+              oat / dairy
             </span>
           )}
         </div>
       </div>
-      <span className="mt-1 text-xs uppercase tracking-[0.2em] text-forest/60 group-hover:text-forest">
+      <span className="mt-auto text-xs uppercase tracking-[0.2em] text-forest/60 group-hover:text-forest">
         Order →
       </span>
     </button>

@@ -26,7 +26,6 @@ const TIME_SLOTS = (() => {
 export function CartDrawer({ open, items, onClose, onRemove, onUpdateQty }: Props) {
   const [name, setName] = useState("");
   const [pickup, setPickup] = useState(TIME_SLOTS[0]);
-  const [notes, setNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -43,7 +42,7 @@ export function CartDrawer({ open, items, onClose, onRemove, onUpdateQty }: Prop
         body: JSON.stringify({
           customerName: name.trim(),
           pickupTime: pickup,
-          notes,
+          notes: "",
           items,
           placedAt: new Date().toISOString(),
         }),
@@ -54,7 +53,6 @@ export function CartDrawer({ open, items, onClose, onRemove, onUpdateQty }: Prop
       }
       setStatus("success");
       setName("");
-      setNotes("");
       setPickup(TIME_SLOTS[0]);
       // Cart clearing happens in parent via the success effect.
       window.dispatchEvent(new Event("order-placed"));
@@ -156,7 +154,7 @@ export function CartDrawer({ open, items, onClose, onRemove, onUpdateQty }: Prop
           <div className="space-y-3">
             <label className="block">
               <span className="text-xs uppercase tracking-[0.18em] text-forest/60">
-                Your name
+                Your name <span className="text-forest">*</span>
               </span>
               <input
                 required
@@ -181,18 +179,6 @@ export function CartDrawer({ open, items, onClose, onRemove, onUpdateQty }: Prop
                   </option>
                 ))}
               </select>
-            </label>
-            <label className="block">
-              <span className="text-xs uppercase tracking-[0.18em] text-forest/60">
-                Notes (optional)
-              </span>
-              <textarea
-                value={notes}
-                onChange={(e) => setNotes(e.target.value)}
-                rows={2}
-                className="mt-1 w-full rounded-lg border border-forest/25 bg-cream px-3 py-2 font-serif text-forestDark focus:border-forest focus:outline-none"
-                placeholder="Allergies, special requests…"
-              />
             </label>
           </div>
 

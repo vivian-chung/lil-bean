@@ -1,6 +1,6 @@
 export type Temperature = "hot" | "iced";
-export type Milk = "oat" | "cow";
-export type Sweetness = "0%" | "lightly sweetened";
+export type Milk = "oat" | "dairy";
+export type Sweetness = "unsweetened" | "lightly sweetened";
 
 export type Drink = {
   id: string;

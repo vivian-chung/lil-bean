@@ -58,8 +58,9 @@ export async function POST(req: Request) {
     await sendOrderDM(result.data);
   } catch (e) {
     console.error("Discord send failed", e);
+    const detail = e instanceof Error ? e.message : "unknown error";
     return NextResponse.json(
-      { error: "Could not deliver order — try again or flag down the barista" },
+      { error: `Could not deliver order — ${detail}` },
       { status: 502 }
     );
   }

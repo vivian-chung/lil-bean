@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import type { CartItem, Drink, Milk, Sweetness, Temperature } from "@/lib/types";
-import { DrinkArt } from "./DrinkArt";
 
 type Props = {
   drink: Drink;
@@ -15,7 +14,7 @@ export function DrinkModal({ drink, onClose, onAdd }: Props) {
   );
   const [milk, setMilk] = useState<Milk | undefined>(drink.hasMilk ? "oat" : undefined);
   const [sweetness, setSweetness] = useState<Sweetness | undefined>(
-    drink.hasSweetness ? "lightly sweetened" : undefined
+    drink.hasSweetness ? "unsweetened" : undefined
   );
   const [qty, setQty] = useState(1);
 
@@ -47,9 +46,6 @@ export function DrinkModal({ drink, onClose, onAdd }: Props) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-start gap-4">
-          <div className="text-forest">
-            <DrinkArt drinkId={drink.id} className="h-20 w-20 object-contain" />
-          </div>
           <div className="flex-1">
             <p className="text-xs uppercase tracking-[0.2em] text-forest/60">
               {drink.category}
@@ -86,7 +82,7 @@ export function DrinkModal({ drink, onClose, onAdd }: Props) {
                 onChange={setMilk}
                 options={[
                   { value: "oat", label: "Oat" },
-                  { value: "cow", label: "Cow" },
+                  { value: "dairy", label: "Dairy" },
                 ]}
               />
             </Field>
@@ -98,7 +94,7 @@ export function DrinkModal({ drink, onClose, onAdd }: Props) {
                 value={sweetness}
                 onChange={setSweetness}
                 options={[
-                  { value: "0%", label: "0%" },
+                  { value: "unsweetened", label: "Unsweetened" },
                   { value: "lightly sweetened", label: "Lightly sweetened" },
                 ]}
               />

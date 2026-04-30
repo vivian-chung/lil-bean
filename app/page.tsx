@@ -3,7 +3,7 @@ import { Menu } from "./components/Menu";
 export default function Home() {
   return (
     <main className="min-h-screen bg-cream">
-      <header className="mx-auto max-w-5xl px-6 pt-10 sm:pt-16">
+      <header className="mx-auto max-w-5xl px-6 sm:px-10 lg:px-16 pt-10 sm:pt-16">
         <div className="rounded-3xl bg-forest p-8 sm:p-12 text-cream shadow-sm">
           <p className="font-display text-xs uppercase tracking-[0.3em] text-cream/70">
             Toreshan Baby Shower · May 3
@@ -25,7 +25,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="mx-auto max-w-5xl px-6 py-12 sm:py-16">
+      <section className="mx-auto max-w-5xl px-6 sm:px-10 lg:px-16 py-12 sm:py-16">
         <p className="mb-2 font-display text-xs uppercase tracking-[0.3em] text-forest/60">
           The menu
         </p>
@@ -35,7 +35,7 @@ export default function Home() {
         <Menu />
       </section>
 
-      <footer className="mx-auto max-w-5xl px-6 pb-16 text-center text-xs uppercase tracking-[0.25em] text-forest/50">
+      <footer className="mx-auto max-w-5xl px-6 sm:px-10 lg:px-16 pb-16 text-center text-xs uppercase tracking-[0.25em] text-forest/50">
         Bring your own mug · Snacks provided
       </footer>
     </main>
