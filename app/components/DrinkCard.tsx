@@ -1,6 +1,5 @@
 "use client";
 import type { Drink } from "@/lib/types";
-import { DrinkArt } from "./DrinkArt";
 
 type Props = { drink: Drink; onPick: () => void };
 
@@ -10,9 +9,6 @@ export function DrinkCard({ drink, onPick }: Props) {
       onClick={onPick}
       className="group flex w-full flex-col items-start gap-3 rounded-2xl border border-forest/15 bg-creamSoft/60 p-5 text-left transition hover:bg-creamSoft hover:shadow-sm"
     >
-      <div className="flex h-28 w-full items-center justify-center text-forest">
-        <DrinkArt drinkId={drink.id} className="h-28 w-28 object-contain" />
-      </div>
       <div className="flex-1">
         <h3 className="font-display text-lg font-medium leading-tight text-forestDark">
           {drink.name}

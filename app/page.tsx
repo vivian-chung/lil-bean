@@ -29,9 +29,19 @@ export default function Home() {
         <p className="mb-2 font-display text-xs uppercase tracking-[0.3em] text-forest/60">
           The menu
         </p>
-        <h2 className="mb-10 font-display text-4xl italic text-forestDark">
+        <h2 className="mb-6 font-display text-4xl italic text-forestDark">
           What can we make you?
         </h2>
+        <div className="mb-10 rounded-2xl border border-forest/15 bg-creamSoft/50 px-5 py-4 text-sm text-forest/80">
+          <p className="font-display text-[0.65rem] uppercase tracking-[0.25em] text-forest/60">
+            A note on milk
+          </p>
+          <ul className="mt-2 space-y-1 font-serif italic">
+            <li>Dairy is always lactose-free.</li>
+            <li>Hot oat drinks: Earth&rsquo;s Own Barista.</li>
+            <li>Iced oat drinks: Oatly.</li>
+          </ul>
+        </div>
         <Menu />
       </section>
 
