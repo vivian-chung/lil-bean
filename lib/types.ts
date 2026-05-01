@@ -1,6 +1,7 @@
 export type Temperature = "hot" | "iced";
 export type Milk = "oat" | "dairy";
 export type Sweetness = "unsweetened" | "lightly sweetened";
+export type Caffeine = "regular" | "decaf";
 
 export type Drink = {
   id: string;
@@ -10,6 +11,7 @@ export type Drink = {
   temperatures: Temperature[];
   hasMilk: boolean;
   hasSweetness: boolean;
+  hasCaffeineChoice?: boolean;
 };
 
 export type CartItem = {
@@ -19,6 +21,7 @@ export type CartItem = {
   temperature?: Temperature;
   milk?: Milk;
   sweetness?: Sweetness;
+  caffeine?: Caffeine;
 };
 
 export type OrderPayload = {

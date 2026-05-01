@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import type { CartItem, Drink, Milk, Sweetness, Temperature } from "@/lib/types";
+import type { Caffeine, CartItem, Drink, Milk, Sweetness, Temperature } from "@/lib/types";
 
 type Props = {
   drink: Drink;
@@ -15,6 +15,9 @@ export function DrinkModal({ drink, onClose, onAdd }: Props) {
   const [milk, setMilk] = useState<Milk | undefined>(drink.hasMilk ? "oat" : undefined);
   const [sweetness, setSweetness] = useState<Sweetness | undefined>(
     drink.hasSweetness ? "unsweetened" : undefined
+  );
+  const [caffeine, setCaffeine] = useState<Caffeine | undefined>(
+    drink.hasCaffeineChoice ? "regular" : undefined
   );
   const [qty, setQty] = useState(1);
 
@@ -32,6 +35,7 @@ export function DrinkModal({ drink, onClose, onAdd }: Props) {
       temperature,
       milk,
       sweetness,
+      caffeine,
     });
     onClose();
   };
@@ -96,6 +100,19 @@ export function DrinkModal({ drink, onClose, onAdd }: Props) {
                 options={[
                   { value: "unsweetened", label: "Unsweetened" },
                   { value: "lightly sweetened", label: "Lightly sweetened" },
+                ]}
+              />
+            </Field>
+          )}
+
+          {drink.hasCaffeineChoice && (
+            <Field label="Caffeine">
+              <ChoiceRow
+                value={caffeine}
+                onChange={setCaffeine}
+                options={[
+                  { value: "regular", label: "Regular" },
+                  { value: "decaf", label: "Decaf" },
                 ]}
               />
             </Field>

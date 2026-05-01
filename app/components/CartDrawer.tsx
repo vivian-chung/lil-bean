@@ -109,7 +109,12 @@ export function CartDrawer({ open, items, onClose, onRemove, onUpdateQty }: Prop
                     <div>
                       <p className="font-display text-lg text-forestDark">{it.name}</p>
                       <p className="mt-0.5 text-sm italic text-forest/70">
-                        {[it.temperature, it.milk, it.sweetness]
+                        {[
+                          it.temperature,
+                          it.caffeine === "decaf" ? "decaf" : null,
+                          it.milk,
+                          it.sweetness,
+                        ]
                           .filter(Boolean)
                           .join(" · ")}
                       </p>

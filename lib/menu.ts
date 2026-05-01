@@ -27,6 +27,7 @@ export const MENU: Drink[] = [
     temperatures: ["hot"],
     hasMilk: true,
     hasSweetness: true,
+    hasCaffeineChoice: true,
   },
   {
     id: "latte",
@@ -36,6 +37,7 @@ export const MENU: Drink[] = [
     temperatures: ["hot", "iced"],
     hasMilk: true,
     hasSweetness: true,
+    hasCaffeineChoice: true,
   },
   {
     id: "americano",
@@ -45,6 +47,7 @@ export const MENU: Drink[] = [
     temperatures: ["hot", "iced"],
     hasMilk: false,
     hasSweetness: false,
+    hasCaffeineChoice: true,
   },
   {
     id: "iced-matcha-latte",

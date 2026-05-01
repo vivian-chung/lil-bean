@@ -12,7 +12,14 @@ function formatOrder(o: OrderPayload): string {
   lines.push("");
   lines.push("**Items:**");
   for (const item of o.items) {
-    const opts = [item.temperature, item.milk, item.sweetness].filter(Boolean).join(", ");
+    const opts = [
+      item.temperature,
+      item.caffeine === "decaf" ? "decaf" : null,
+      item.milk,
+      item.sweetness,
+    ]
+      .filter(Boolean)
+      .join(", ");
     lines.push(`• ${item.qty}× ${item.name}${opts ? ` _(${opts})_` : ""}`);
   }
   lines.push("");
