@@ -14,7 +14,7 @@ export default function Home() {
             <span className="italic font-light">Coffeehouse</span>
           </h1>
           <p className="mt-4 max-w-md font-serif text-base text-cream/85">
-            Drop-in café for the day. Pre-order ahead or order at the counter — your drinks ping the barista on Discord.
+            Pre-order ahead or order at tbe shower, and a bot will ping the Vivian with the order.
           </p>
           <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-3 text-sm sm:grid-cols-4">
             <Detail term="Date" def="Sun · May 3, 2026" />
@@ -37,7 +37,7 @@ export default function Home() {
             A note on milk
           </p>
           <ul className="mt-2 space-y-1 font-serif italic">
-            <li>Dairy is always lactose-free.</li>
+            <li>Dairy drinks are made with Natrel lactose-free milk.</li>
             <li>Hot oat drinks: Earth&rsquo;s Own Barista.</li>
             <li>Iced oat drinks: Oatly.</li>
           </ul>
@@ -46,7 +46,7 @@ export default function Home() {
       </section>
 
       <footer className="mx-auto max-w-5xl px-6 sm:px-10 lg:px-16 pb-16 text-center text-xs uppercase tracking-[0.25em] text-forest/50">
-        Bring your own mug · Snacks provided
+         ✦
       </footer>
     </main>
   );

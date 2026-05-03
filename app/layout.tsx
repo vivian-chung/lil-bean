@@ -17,7 +17,7 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   title: "Lil' Bean Coffeehouse",
-  description: "Toreshan Baby Shower — pre-order or order day-of.",
+  description: "Toreshan Baby Shower — pre-order or order on the day of",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
